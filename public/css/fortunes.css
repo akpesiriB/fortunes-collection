@@ -1,0 +1,596 @@
+/* ==========================================================================
+   FORTUNES COLLECTION - HAUTE LUXURY & NEO-BRUTALIST DESIGN SYSTEM
+   Bespoke Nigerian Luxury Streetwear | Maison Effurun, Delta State
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --fc-black: #070707;
+    --fc-dark: #0F0F11;
+    --fc-card: #141416;
+    --fc-surface: #1A1A1D;
+    --fc-gold: #D4AF37;
+    --fc-gold-champagne: #C5A059;
+    --fc-gold-bright: #F5E6C4;
+    --fc-gold-light: #FFF8E7;
+    --fc-gold-cream: #F0DEB8;
+    --fc-gold-dark: #8C6D28;
+    --fc-gold-shadow: #9E7D36;
+    --fc-gold-muted: rgba(197, 160, 89, 0.25);
+    --fc-gold-border: rgba(197, 160, 89, 0.45);
+    --fc-cream: #F5F2EB;
+    --fc-ivory: #FAF8F5;
+    --fc-olive: #545B48;
+    --fc-font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --fc-font-display: 'Playfair Display', Georgia, serif;
+    --fc-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --fc-font-mono: 'Space Grotesk', monospace;
+    --fc-font-pixel: 'Silkscreen', monospace;
+}
+
+/* ==========================================================================
+   THEME PALETTES: HAUTE NOIR (DARK) & HAUTE ALABASTER (LIGHT)
+   ========================================================================== */
+
+html.dark {
+    --fc-bg: #070707;
+    --fc-card: #141416;
+    --fc-surface: #1A1A1D;
+    --fc-text: #F5F2EB;
+    --fc-text-muted: #A1A1AA;
+    --fc-border: rgba(197, 160, 89, 0.35);
+    --fc-gold: #D4AF37;
+    --fc-gold-champagne: #C5A059;
+    background-color: #070707;
+    color: #F5F2EB;
+}
+
+html.light {
+    --fc-bg: #FAF8F5;
+    --fc-card: #FFFFFF;
+    --fc-surface: #F0EDE6;
+    --fc-text: #18181B;
+    --fc-text-muted: #52525B;
+    --fc-border: rgba(197, 160, 89, 0.25);
+    --fc-gold: #9E7D36;
+    --fc-gold-champagne: #8C6D28;
+    background-color: #FAF8F5;
+    color: #18181B;
+}
+
+/* Base resets & typography */
+html {
+    scroll-behavior: smooth;
+    font-family: var(--fc-font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+html.dark body {
+    background-color: #070707;
+    color: #F5F2EB;
+    overflow-x: hidden;
+}
+
+html.light body {
+    background-color: #FAF8F5;
+    color: #18181B;
+    overflow-x: hidden;
+}
+
+html.light .gold-gradient-text {
+    background: linear-gradient(135deg, #8C6D28 0%, #B8934A 40%, #9E7D36 75%, #6B511C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+html.light .gold-gradient-bg {
+    background: linear-gradient(135deg, #F0DEB8 0%, #C5A059 50%, #9E7D36 100%);
+}
+
+.font-serif { font-family: var(--fc-font-serif); }
+.font-display { font-family: var(--fc-font-display); }
+.font-sans { font-family: var(--fc-font-sans); }
+.font-mono { font-family: var(--fc-font-mono); }
+.font-pixel { font-family: var(--fc-font-pixel); }
+
+/* Luxury Gold & Metallic Accents (Exact Hero Match) */
+.text-gold { color: var(--fc-gold-champagne); }
+.text-gold-classic { color: var(--fc-gold); }
+.text-gold-bright { color: var(--fc-gold-bright); }
+.bg-gold { background-color: var(--fc-gold-champagne); }
+.border-gold { border-color: var(--fc-gold-champagne); }
+.border-gold-muted { border-color: var(--fc-gold-muted); }
+
+.gold-gradient-text {
+    background: linear-gradient(135deg, #F5E6C4 0%, #D4AF37 40%, #B8934A 75%, #8C6D28 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+    background: linear-gradient(135deg, #F0DEB8 0%, #C5A059 50%, #9E7D36 100%);
+}
+
+.gold-glow {
+    box-shadow: 0 0 25px rgba(197, 160, 89, 0.25);
+}
+
+.gold-glow-lg {
+    box-shadow: 0 0 45px rgba(197, 160, 89, 0.4);
+}
+
+/* Neo-Brutalist & Haute Panels */
+.brutal-border {
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.brutal-border-gold {
+    border: 2px solid var(--fc-gold);
+    box-shadow: 4px 4px 0px rgba(212, 175, 55, 0.6);
+}
+
+.brutal-card {
+    background: #111;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.brutal-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--fc-gold);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Filmstrip Perforated Edge Accent */
+.filmstrip-edge {
+    background-image: radial-gradient(circle, #000 35%, transparent 35%);
+    background-size: 16px 16px;
+    background-position: 0 0;
+}
+
+.dot-pattern {
+    background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1.5px, transparent 1.5px);
+    background-size: 18px 18px;
+}
+
+.dot-pattern-dark {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+    background-size: 18px 18px;
+}
+
+/* Infinite Marquee / Ticker */
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* ==========================================================================
+   FLOATING LIVE GOLDEN MINI GARMENTS ANIMATIONS
+   ========================================================================== */
+@keyframes floatGently {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translateY(-16px) rotate(4deg) scale(1.03);
+    }
+}
+
+@keyframes floatDrift {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-20px) translateX(10px) rotate(-5deg);
+    }
+    66% {
+        transform: translateY(-8px) translateX(-8px) rotate(3deg);
+    }
+}
+
+@keyframes floatSway {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-22px) rotate(-6deg);
+    }
+}
+
+@keyframes floatShimmer {
+    0%, 100% {
+        opacity: 0.75;
+        filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+    }
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 16px rgba(246, 226, 159, 0.85));
+    }
+}
+
+@keyframes ribbonWave {
+    0%, 100% {
+        transform: rotate(0deg) skewX(0deg);
+    }
+    50% {
+        transform: rotate(6deg) skewX(4deg);
+    }
+}
+
+.anim-float-1 {
+    animation: floatGently 7s ease-in-out infinite alternate;
+}
+.anim-float-2 {
+    animation: floatDrift 9.5s ease-in-out infinite;
+}
+.anim-float-3 {
+    animation: floatSway 8s ease-in-out infinite alternate;
+}
+.anim-float-4 {
+    animation: floatGently 11s ease-in-out infinite alternate-reverse;
+}
+.anim-float-5 {
+    animation: floatDrift 13s ease-in-out infinite alternate;
+}
+.anim-float-6 {
+    animation: floatSway 15s ease-in-out infinite alternate;
+}
+.anim-float-7 {
+    animation: floatGently 18s ease-in-out infinite alternate-reverse;
+}
+.anim-float-8 {
+    animation: floatDrift 21s ease-in-out infinite alternate;
+}
+.anim-shimmer {
+    animation: floatShimmer 4s ease-in-out infinite alternate;
+}
+.anim-ribbon {
+    animation: ribbonWave 10s ease-in-out infinite alternate;
+}
+
+/* Gadget Screen / Gameboy Aesthetic */
+.retro-screen {
+    background: #191B16;
+    border: 2px solid #2B2F24;
+    position: relative;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.retro-screen::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Floating Action / Sound Pill */
+.floating-pill {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 40;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-pill:hover {
+    transform: scale(1.05) translateY(-2px);
+}
+
+/* Luxury Buttons (Hero Champagne Gradient) */
+.btn-gold {
+    background: linear-gradient(135deg, #F0DEB8 0%, #C5A059 50%, #9E7D36 100%);
+    color: #070707;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 248, 231, 0.35);
+    box-shadow: 0 2px 12px rgba(197, 160, 89, 0.25);
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 4px 20px rgba(197, 160, 89, 0.45);
+    transform: translateY(-1px);
+}
+
+.btn-outline-gold {
+    background: transparent;
+    color: var(--fc-gold);
+    border: 1px solid var(--fc-gold);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-gold:hover {
+    background: var(--fc-gold);
+    color: #080808;
+}
+
+/* Slide-out Cart Drawer */
+.cart-drawer-overlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cart-drawer {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Luxury Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.4);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fc-gold);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ==========================================================================
+   LIGHT MODE: HAUTE COUTURE ALABASTER & CHAMPAGNE GOLD AESTHETIC
+   ========================================================================== */
+html.light {
+    --fc-bg: #FAF8F5;
+    --fc-card: #FFFFFF;
+    --fc-surface: #F5F2EB;
+    --fc-gold: #9E7D36;
+    --fc-gold-champagne: #8C6D28;
+    --fc-gold-bright: #B8860B;
+    --fc-text: #18181B;
+    --fc-text-muted: #52525B;
+    --fc-border: rgba(158, 125, 54, 0.25);
+    background-color: #FAF8F5;
+    color: #18181B;
+}
+
+html.light body {
+    background-color: #FAF8F5;
+    color: #18181B;
+}
+
+/* Haute Hero Protection: Always retain cinematic noir stage regardless of theme */
+#haute-hero {
+    background-color: #070707 !important;
+    color: #FFFFFF !important;
+}
+#haute-hero .text-white,
+#haute-hero a.text-white,
+#haute-hero span.text-white {
+    color: #FFFFFF !important;
+}
+
+/* Light mode gold gradients */
+html.light .gold-gradient-text {
+    background: linear-gradient(135deg, #876510 0%, #B8860B 50%, #6E5108 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Light mode luxury scrollbars */
+html.light ::-webkit-scrollbar-track {
+    background: #F0ECE3;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+    background: rgba(158, 125, 54, 0.35);
+    border-radius: 3px;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+    background: rgba(158, 125, 54, 0.7);
+}
+
+/* Light mode cards & brutalist elements */
+html.light .brutal-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(158, 125, 54, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+html.light .brutal-card:hover {
+    border-color: var(--fc-gold);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 0 20px rgba(158, 125, 54, 0.15);
+}
+
+html.light .retro-screen {
+    background: #EBE7DC;
+    border: 2px solid #D1CABB;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+html.light .retro-screen span,
+html.light .retro-screen p {
+    color: #383428;
+}
+
+html.light .retro-screen::after {
+    background: linear-gradient(rgba(235, 231, 220, 0) 50%, rgba(190, 185, 170, 0.25) 50%);
+}
+
+/* ==========================================================================
+   CINEMATIC HAUTE HERO & DYNAMIC FLOATING PARTICLES SYSTEM
+   ========================================================================== */
+
+@keyframes heroLightPulse {
+    0%, 100% {
+        opacity: 0.75;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.95;
+        transform: scale(1.02);
+    }
+}
+
+@keyframes heroRimGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 45px rgba(246, 226, 159, 0.7)) drop-shadow(0 0 70px rgba(212, 175, 55, 0.3));
+    }
+}
+
+@keyframes floatGentle1 {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(8px, -18px, 0) rotate(3deg);
+    }
+}
+
+@keyframes floatGentle2 {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(-10px, -24px, 0) rotate(-4deg);
+    }
+}
+
+@keyframes floatGentle3 {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(12px, -14px, 0) rotate(4deg);
+    }
+}
+
+@keyframes floatGentle4 {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(-8px, -20px, 0) rotate(-3deg);
+    }
+}
+
+@keyframes floatGentle5 {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(14px, -22px, 0) rotate(5deg);
+    }
+}
+
+@keyframes floatCoin3D {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotateY(0deg) rotateZ(0deg);
+        filter: brightness(1);
+    }
+    25% {
+        transform: translate3d(4px, -10px, 0) rotateY(25deg) rotateZ(3deg);
+        filter: brightness(1.25);
+    }
+    50% {
+        transform: translate3d(-6px, -20px, 0) rotateY(-18deg) rotateZ(-2deg);
+        filter: brightness(0.95);
+    }
+    75% {
+        transform: translate3d(6px, -12px, 0) rotateY(12deg) rotateZ(2deg);
+        filter: brightness(1.3);
+    }
+}
+
+@keyframes ribbonSway {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translate3d(-14px, -18px, 0) rotate(3deg) scale(1.03);
+    }
+}
+
+@keyframes bokehPulse {
+    0%, 100% {
+        transform: scale(1) translate3d(0, 0, 0);
+        opacity: 0.65;
+    }
+    50% {
+        transform: scale(1.18) translate3d(10px, -16px, 0);
+        opacity: 0.95;
+    }
+}
+
+.anim-hero-light {
+    animation: heroLightPulse 7s ease-in-out infinite;
+}
+
+.anim-hero-rim {
+    animation: heroRimGlow 5s ease-in-out infinite;
+}
+
+.particle-float-1 {
+    animation: floatGentle1 6.5s ease-in-out infinite;
+}
+
+.particle-float-2 {
+    animation: floatGentle2 8.2s ease-in-out infinite;
+}
+
+.particle-float-3 {
+    animation: floatGentle3 7.4s ease-in-out infinite;
+}
+
+.particle-float-4 {
+    animation: floatGentle4 6s ease-in-out infinite;
+}
+
+.particle-float-5 {
+    animation: floatGentle5 9s ease-in-out infinite;
+}
+
+.particle-coin {
+    animation: floatCoin3D 6.2s ease-in-out infinite;
+}
+
+.particle-ribbon {
+    animation: ribbonSway 9.5s ease-in-out infinite;
+}
+
+.particle-bokeh {
+    animation: bokehPulse 7.5s ease-in-out infinite;
+}
+
+
+
